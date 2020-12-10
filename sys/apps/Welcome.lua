@@ -9,7 +9,7 @@ local shell    = _ENV.shell
 
 local splashIntro = [[First Time Setup
 
-%sThanks for installing Opus OS. The next screens will prompt you for basic settings for this computer.]]
+%sThanks for installing MinePhone OS. The next screens will prompt you for basic settings for this MinePhone.]]
 local labelIntro = [[Set a friendly name for this computer.
 
 %sNo spaces recommended.]]
@@ -28,7 +28,7 @@ LDDestroier: Art design + custom apps
 Lemmmy:      Application improvements
 
 %sContribute at:%s
-https://github.com/kepler155c/opus]]
+https://github.com/TIGCity/opus]]
 
 local page = UI.Page {
 	wizard = UI.Wizard {
