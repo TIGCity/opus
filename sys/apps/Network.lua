@@ -114,11 +114,11 @@ local page = UI.Page {
 
 local function sendCommand(host, command)
 	if not device.wireless_modem then
-		page.notification:error('Wireless modem not present')
+		page.notification:error('You are Not connected to your Modem')
 		return
 	end
 
-	page.notification:info('Connecting')
+	page.notification:info('Connecting..')
 	page:sync()
 
 	local socket = Socket.connect(host, 161)
@@ -127,7 +127,7 @@ local function sendCommand(host, command)
 		socket:close()
 		page.notification:success('Command sent')
 	else
-		page.notification:error('Failed to connect')
+		page.notification:error(':C Failed to connect')
 	end
 end
 
@@ -257,13 +257,13 @@ end)
 
 Event.on('device_detach', function(_, deviceName)
 	if deviceName == 'wireless_modem' then
-		page.notification:error('Wireless modem not attached')
+		page.notification:error('Wireless modem not Connected')
 		page:sync()
 	end
 end)
 
 if not device.wireless_modem then
-	page.notification:error('Wireless modem not attached')
+	page.notification:error('Wireless modem not connected')
 end
 
 UI:setPage(page)
