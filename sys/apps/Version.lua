@@ -12,7 +12,7 @@ UI:setPage(UI.Page {
     UI.Text {
         x = 2, y = 2, ex = -2,
         align = 'center',
-        value = 'Opus has been updated.',
+        value = 'MinePhone OS has been updated.',
         textColor = 'yellow',
     },
     UI.TextArea {
@@ -32,7 +32,7 @@ UI:setPage(UI.Page {
     UI.Button {
         x = 2, y = -2, width = 21,
         event = 'update',
-        text = 'Update'
+        text = 'Update Your MinePhone'
     },
     eventHandler = function(self, event)
         if event.type == 'skip' then
