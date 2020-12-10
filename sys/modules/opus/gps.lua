@@ -9,13 +9,13 @@ local vector = _G.vector
 function GPS.locate(timeout, debug)
 	if not device.wireless_modem then
 		if debug then
-			print('No wireless modem attached')
+			print('You Are Not Connected to A Wireless Modem')
 		end
 		return nil
 	end
 
 	if debug then
-		print('Finding position...')
+		print('Finding location...')
 	end
 
 	local modem = device.wireless_modem
@@ -62,7 +62,7 @@ function GPS.locate(timeout, debug)
 		modem.close(GPS.CHANNEL_GPS)
 	end
 	if debug then
-		print("Position is "..pos.x..","..pos.y..","..pos.z)
+		print("Your Location is "..pos.x..","..pos.y..","..pos.z)
 	end
 	return pos and vector.new(pos.x, pos.y, pos.z)
 end
